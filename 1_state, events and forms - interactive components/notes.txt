@@ -15,3 +15,26 @@ We don't do direct DOM manipulatons >  How is the component view updated then? (
 More thoughts on state
 - Each component has and manages its own state, no matter how amny times we render the same component.
 - This means that each instance of a components work individually form each other.
+
+What's the difference between state and props?
+- State is internal data and is owned by component it is defined in.
+- Props are external data owned by parent component.
+- Props are read only and cannot be modified by the components recieving them.
+- When a component recieved new update props, that will also cause the component to re-render.
+
+State: When and where
+- Need to store data
+Will data chage at some point?
+    - no: Use a regular cont variable
+Can be computed from existing state/props?
+    - Yes: Derive State
+Should it re-render the component?
+    - No: use a useRef (persists data over time, like regular state, but does not re-render the component.)
+    - Yes: add new state to the component using useState/props
+Only be used by this component?
+    - Yes: Leave in component
+Also used by a child component?
+    - Yes: Pass to child via props
+Used by one or more sibling components?
+    - Yes: Lift state up to first common parent.
+    - No: Time for global state.
