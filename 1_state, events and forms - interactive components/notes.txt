@@ -1,0 +1,17 @@
+Whenever we update a piece of state in a components, this trigers the component to re-render (creates a new update view for the component)
+We change the state we change the UI
+
+Using use state
+When using useState(1), we can console.log it and in the console.log we will get an arry of 2 values
+- Value 1 = "initialState"
+- Value 2 = fn() to change the initialState
+
+The Mechanics of state
+We don't do direct DOM manipulatons >  How is the component view updated then? (We change the state we change the UI - React calls the function component again)
+- Let's imaging there is a button in the view (that button is clicked and runs setState)
+- Now when react sees that the state has been changed, it will automatically re-render the components, which will result in a updated view for this component.
+- This process is literally why React is called React in the first place.
+
+More thoughts on state
+- Each component has and manages its own state, no matter how amny times we render the same component.
+- This means that each instance of a components work individually form each other.
